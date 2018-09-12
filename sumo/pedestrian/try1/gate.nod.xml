@@ -1,0 +1,6 @@
+<nodes>
+	<node id = "gate 1" x="-250.0" y="0.0" type="allway_stop" />
+	<node id = "gate 2" x="+250.0" y="0.0" type="allway_stop" />
+	<node id = "gate 3" x="0.0" y="15.0" type="allway_stop" />
+	<node id = "gate 4" x="10.0" y="-15.0" type="allway_stop" />
+</nodes>

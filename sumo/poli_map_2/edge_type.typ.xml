@@ -1,0 +1,7 @@
+<types>
+    <type id="highway.living_street" priority="5" numLanes="2" speed="30.0" sidewalkWidth="2" disallow = "pedestrian"/>
+    <type id="highway.path" priority="3" numLanes="1" speed="2" allow = "pedestrian bicycle" />
+    <type id="highway.cycleway" priority="4" numLanes="2" speed="4.5" allow = "pedestrian bicycle"/>
+    <type id="highway.service" priority="5" numLanes="1" speed="10" disallow = "pedestrian"/>
+    <type id="highway.footway" priority="3" numLanes="2" speed="2" allow = "pedestrian bicycle"/>
+</types>

@@ -1,0 +1,11 @@
+<configuration>
+    <input>
+        <net-file value="gate.net.xml"/>
+        <route-files value="gate.rou.xml"/>
+        <gui-settings-file value="gate.settings.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+        <end value="10000"/>
+    </time>
+</configuration>

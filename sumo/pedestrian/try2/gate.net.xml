@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on mer 06 giu 2018 13:31:34 CEST by Netedit Version 0.32.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/daniubo/Scrivania/sumo/pedestrian/try2/gate.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/daniubo/Scrivania/sumo/pedestrian/try2/gate.net.xml"/>
+    </output>
+
+    <processing>
+        <no-internal-links value="true"/>
+        <no-turnarounds value="true"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+        <junctions.corner-detail value="0"/>
+        <rectangular-lane-cut value="false"/>
+        <walkingareas value="false"/>
+    </processing>
+
+</configuration>
+-->
+
+<net version="0.27" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="0.00,0.00" convBoundary="-250.00,-70.00,250.00,70.00" origBoundary="-10000000000.00,-10000000000.00,10000000000.00,10000000000.00" projParameter="!"/>
+
+    <edge id="DEIBtoGolgi" from="gateDEIB" to="gateGolgi" priority="1">
+        <lane id="DEIBtoGolgi_0" index="0" allow="pedestrian" speed="13.89" length="239.47" shape="-13.06,63.09 197.59,8.48"/>
+        <lane id="DEIBtoGolgi_1" index="1" allow="pedestrian" speed="13.89" length="239.47" shape="-12.23,66.28 198.41,11.67"/>
+    </edge>
+    <edge id="DEIBtoPonzio" from="gateDEIB" to="gatePonzio" priority="1">
+        <lane id="DEIBtoPonzio_0" index="0" allow="pedestrian" speed="13.89" length="209.31" shape="-24.95,73.67 -207.90,17.99"/>
+        <lane id="DEIBtoPonzio_1" index="1" allow="pedestrian" speed="13.89" length="209.31" shape="-23.98,70.51 -206.93,14.83"/>
+    </edge>
+    <edge id="DEIBtoGiuriati" from="gateDEIB" to="gateGiuriati" priority="1">
+        <lane id="DEIBtoGiuriati_0" index="0" allow="pedestrian" speed="13.89" length="145.60" shape="-22.44,60.51 11.68,-58.90"/>
+        <lane id="DEIBtoGiuriati_1" index="1" allow="pedestrian" speed="13.89" length="145.60" shape="-19.26,61.42 14.85,-58.00"/>
+    </edge>
+    <edge id="GiuriatitoGolgi" from="gateGiuriati" to="gateGolgi" priority="1">
+        <lane id="GiuriatitoGolgi_0" index="0" allow="pedestrian" speed="13.89" length="209.31" shape="29.25,-72.36 207.90,-17.99"/>
+        <lane id="GiuriatitoGolgi_1" index="1" allow="pedestrian" speed="13.89" length="209.31" shape="28.29,-69.20 206.93,-14.83"/>
+    </edge>
+    <edge id="GiuriatitoPonzio" from="gateGiuriati" to="gatePonzio" priority="1">
+        <lane id="GiuriatitoPonzio_0" index="0" allow="pedestrian" speed="13.89" length="239.47" shape="8.70,-61.96 -197.59,-8.48"/>
+        <lane id="GiuriatitoPonzio_1" index="1" allow="pedestrian" speed="13.89" length="239.47" shape="7.87,-65.15 -198.41,-11.67"/>
+    </edge>
+    <edge id="GiuriatitoDEIB" from="gateGiuriati" to="gateDEIB" priority="1">
+        <lane id="GiuriatitoDEIB_0" index="0" allow="pedestrian" speed="13.89" length="145.60" shape="21.20,-56.18 -12.92,63.23"/>
+        <lane id="GiuriatitoDEIB_1" index="1" allow="pedestrian" speed="13.89" length="145.60" shape="18.03,-57.09 -16.09,62.32"/>
+    </edge>
+    <edge id="GolgitoDEIB" from="gateGolgi" to="gateDEIB" priority="1">
+        <lane id="GolgitoDEIB_0" index="0" allow="pedestrian" speed="13.89" length="239.47" shape="200.07,18.06 -10.57,72.67"/>
+        <lane id="GolgitoDEIB_1" index="1" allow="pedestrian" speed="13.89" length="239.47" shape="199.24,14.86 -11.40,69.48"/>
+    </edge>
+    <edge id="GolgitoGiuriati" from="gateGolgi" to="gateGiuriati" priority="1">
+        <lane id="GolgitoGiuriati_0" index="0" allow="pedestrian" speed="13.89" length="209.31" shape="205.01,-8.52 26.37,-62.89"/>
+        <lane id="GolgitoGiuriati_1" index="1" allow="pedestrian" speed="13.89" length="209.31" shape="205.97,-11.67 27.33,-66.04"/>
+    </edge>
+    <edge id="GolgiToPonzio" from="gateGolgi" to="gatePonzio" priority="1">
+        <lane id="GolgiToPonzio_0" index="0" allow="pedestrian" speed="13.89" length="401.61" shape="197.14,4.95 -197.14,4.95"/>
+        <lane id="GolgiToPonzio_1" index="1" allow="pedestrian" speed="13.89" length="401.61" shape="197.14,1.65 -197.14,1.65"/>
+    </edge>
+    <edge id="PonziotoDEIB" from="gatePonzio" to="gateDEIB" priority="1">
+        <lane id="PonziotoDEIB_0" index="0" allow="pedestrian" speed="13.89" length="209.31" shape="-205.01,8.52 -22.06,64.20"/>
+        <lane id="PonziotoDEIB_1" index="1" allow="pedestrian" speed="13.89" length="209.31" shape="-205.97,11.67 -23.02,67.35"/>
+    </edge>
+    <edge id="PonziotoGiuriati" from="gatePonzio" to="gateGiuriati" priority="1">
+        <lane id="PonziotoGiuriati_0" index="0" allow="pedestrian" speed="13.89" length="239.47" shape="-200.07,-18.06 6.22,-71.54"/>
+        <lane id="PonziotoGiuriati_1" index="1" allow="pedestrian" speed="13.89" length="239.47" shape="-199.24,-14.86 7.05,-68.35"/>
+    </edge>
+    <edge id="PonzioToGolgi" from="gatePonzio" to="gateGolgi" priority="1">
+        <lane id="PonzioToGolgi_0" index="0" allow="pedestrian" speed="13.89" length="401.61" shape="-197.14,-4.95 197.14,-4.95"/>
+        <lane id="PonzioToGolgi_1" index="1" allow="pedestrian" speed="13.89" length="401.61" shape="-197.14,-1.65 197.14,-1.65"/>
+    </edge>
+
+    <junction id="gateDEIB" type="dead_end" x="-20.00" y="70.00" incLanes="GolgitoDEIB_0 GolgitoDEIB_1 GiuriatitoDEIB_0 GiuriatitoDEIB_1 PonziotoDEIB_0 PonziotoDEIB_1" intLanes="" shape="-10.17,74.22 -13.46,61.54 -11.38,63.67 -23.98,60.07 -21.60,62.67 -25.41,75.20" radius="-3.00"/>
+    <junction id="gateGiuriati" type="dead_end" x="20.00" y="-70.00" incLanes="GolgitoGiuriati_0 GolgitoGiuriati_1 PonziotoGiuriati_0 PonziotoGiuriati_1 DEIBtoGiuriati_0 DEIBtoGiuriati_1" intLanes="" shape="25.90,-61.36 29.72,-73.89 5.82,-73.09 9.10,-60.41 10.14,-59.34 22.74,-55.74"/>
+    <junction id="gateGolgi" type="dead_end" x="250.00" y="0.00" incLanes="GiuriatitoGolgi_0 GiuriatitoGolgi_1 PonzioToGolgi_0 PonzioToGolgi_1 DEIBtoGolgi_0 DEIBtoGolgi_1" intLanes="" shape="208.36,-19.52 204.55,-6.99 197.14,-6.55 197.14,6.55 197.18,6.93 200.47,19.61"/>
+    <junction id="gatePonzio" type="dead_end" x="-250.00" y="0.00" incLanes="DEIBtoPonzio_0 DEIBtoPonzio_1 GolgiToPonzio_0 GolgiToPonzio_1 GiuriatitoPonzio_0 GiuriatitoPonzio_1" intLanes="" shape="-208.36,19.52 -204.55,6.99 -197.14,6.55 -197.14,-6.55 -197.18,-6.93 -200.47,-19.61"/>
+
+</net>

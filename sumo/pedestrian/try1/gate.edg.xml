@@ -1,0 +1,14 @@
+<edges>
+    <edge from="gate 1" to="gate 2" id="towardsGolgi" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 2" to="gate 1" id="towardsPolimi" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 3" to="gate 4" id="towardsDEIB" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 4" to="gate 3" id="towardsGiuriati" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 1" to="gate 4" id="fromPolimiToDEIB" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 4" to="gate 1" id="fromDEIBtoPolimi" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 4" to="gate 2" id="fromDEIBtoGolgi" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 2" to="gate 4" id="fromGolgitoDEIB" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 2" to="gate 3" id="fromGolgitoGiuriati" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 3" to="gate 2" id="fromGiuriatitoGolgi" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 1" to="gate 3" id="fromPolimitoGiuriati" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+    <edge from="gate 3" to="gate 1" id="fromGiuriatitoPolimi" numLanes="1" speed="4.00" length="500" allow="pedestrian"/>
+</edges>

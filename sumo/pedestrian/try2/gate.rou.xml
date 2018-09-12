@@ -1,0 +1,17 @@
+<routes>
+    <person id="person0" depart="0" color="0,0,1">
+        <walk edges="DEIBTOGolgi GolgiTOGiuriati"/>
+    </person>
+    <person id="person4" depart="20" color="1,0,1">
+        <walk edges="DEIBTOGolgi GolgiTOGiuriati GiuriatiTOPonzio PonzioTODEIB DEIBtoGiuriati"/>
+    </person>
+    <person id="person1" depart="40" color="1,0,0">
+        <walk edges="DEIBTOGolgi GolgiTOGiuriati GiuriatitoDEIB DEIBTOPonzio"/>
+    </person>
+    <person id="person3" depart="50" color="0,1,0">
+        <walk edges="DEIBTOGolgi GolgiTOGiuriati"/>
+    </person>
+    <person id="person2" depart="60" color="1,1,0">
+        <walk edges="DEIBTOGolgi GolgiTOGiuriati"/>
+    </person>
+</routes>

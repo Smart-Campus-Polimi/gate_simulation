@@ -1,0 +1,3 @@
+reset;
+
+model /home/daniubo/Scaricati/ampl.linux64/lp.mod;

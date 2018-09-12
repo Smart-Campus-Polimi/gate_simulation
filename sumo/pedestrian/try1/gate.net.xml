@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on Fri Jun  1 15:13:03 2018 by SUMO netconvert Version 0.32.0
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <node-files value="gate.nod.xml"/>
+        <edge-files value="gate.edg.xml"/>
+    </input>
+
+    <output>
+        <output-file value="gate.net.xml"/>
+    </output>
+
+</configuration>
+-->
+
+<net version="0.27" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+
+    <location netOffset="250.00,15.00" convBoundary="0.00,0.00,500.00,30.00" origBoundary="-250.00,-15.00,250.00,15.00" projParameter="!"/>
+
+    <edge id="fromDEIBtoGolgi" from="gate 4" to="gate 2" priority="-1" length="500.00">
+        <lane id="fromDEIBtoGolgi_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="264.10,-1.40 499.85,13.34"/>
+    </edge>
+    <edge id="fromDEIBtoPolimi" from="gate 4" to="gate 1" priority="-1" length="500.00">
+        <lane id="fromDEIBtoPolimi_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="253.81,2.01 0.10,16.65"/>
+    </edge>
+    <edge id="fromGiuriatitoGolgi" from="gate 3" to="gate 2" priority="-1" length="500.00">
+        <lane id="fromGiuriatitoGolgi_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="256.20,27.98 499.90,13.35"/>
+    </edge>
+    <edge id="fromGiuriatitoPolimi" from="gate 3" to="gate 1" priority="-1" length="500.00">
+        <lane id="fromGiuriatitoPolimi_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="245.91,31.41 0.14,16.66"/>
+    </edge>
+    <edge id="fromGolgitoDEIB" from="gate 2" to="gate 4" priority="-1" length="500.00">
+        <lane id="fromGolgitoDEIB_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="499.90,16.65 263.89,1.90"/>
+    </edge>
+    <edge id="fromGolgitoGiuriati" from="gate 2" to="gate 3" priority="-1" length="500.00">
+        <lane id="fromGolgitoGiuriati_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="499.85,16.66 256.39,31.27"/>
+    </edge>
+    <edge id="fromPolimiToDEIB" from="gate 1" to="gate 4" priority="-1" length="500.00">
+        <lane id="fromPolimiToDEIB_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="0.15,13.34 253.62,-1.28"/>
+    </edge>
+    <edge id="fromPolimitoGiuriati" from="gate 1" to="gate 3" priority="-1" length="500.00">
+        <lane id="fromPolimitoGiuriati_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="0.10,13.35 246.11,28.11"/>
+    </edge>
+    <edge id="towardsDEIB" from="gate 3" to="gate 4" priority="-1" length="500.00">
+        <lane id="towardsDEIB_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="250.43,23.50 256.44,5.45"/>
+    </edge>
+    <edge id="towardsGiuriati" from="gate 4" to="gate 3" priority="-1" length="500.00">
+        <lane id="towardsGiuriati_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="259.57,6.49 253.56,24.54"/>
+    </edge>
+    <edge id="towardsGolgi" from="gate 1" to="gate 2" priority="-1" length="500.00">
+        <lane id="towardsGolgi_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="0.15,13.35 499.85,13.35"/>
+    </edge>
+    <edge id="towardsPolimi" from="gate 2" to="gate 1" priority="-1" length="500.00">
+        <lane id="towardsPolimi_0" index="0" allow="pedestrian" speed="4.00" length="500.00" shape="499.85,16.65 0.14,16.65"/>
+    </edge>
+
+    <junction id="gate 1" type="dead_end" x="0.00" y="15.00" incLanes="fromGiuriatitoPolimi_0 towardsPolimi_0 fromDEIBtoPolimi_0" intLanes="" shape="-0.19,18.24 0.19,11.76 0.00,18.25 0.00,11.75 0.19,18.24 -0.19,11.76"/>
+    <junction id="gate 2" type="dead_end" x="500.00" y="15.00" incLanes="fromDEIBtoGolgi_0 towardsGolgi_0 fromGiuriatitoGolgi_0" intLanes="" shape="500.20,11.76 499.80,18.24 500.00,11.75 500.00,18.25 499.81,11.76 500.19,18.24"/>
+    <junction id="gate 3" type="dead_end" x="250.00" y="30.00" incLanes="fromGolgitoGiuriati_0 towardsGiuriati_0 fromPolimitoGiuriati_0" intLanes="" shape="256.49,32.87 256.10,26.38 255.08,25.04 248.91,22.99 246.21,26.52 245.82,33.00"/>
+    <junction id="gate 4" type="dead_end" x="260.00" y="0.00" incLanes="fromGolgitoDEIB_0 fromPolimiToDEIB_0 towardsDEIB_0" intLanes="" shape="263.79,3.49 264.20,-2.99 253.53,-2.88 253.90,3.61 254.93,4.94 261.09,7.00"/>
+
+</net>

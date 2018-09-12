@@ -1,0 +1,24 @@
+
+				SUMO Vehicular and pedestrian Simulation with elevation data
+
+
+1- Download the osm files of the area of interest from openstreetmap.org
+
+
+2- Convert the OSM normal files to the new modified OSM files (with elevation) (using osmosis tool) with additional srtm plugin
+	osmosis --read-xml map.osm --write-srtm tagName=ele --write-xml Munich.osm
+
+3- Generate the network file (Munich.net.xml) using the netconvert 
+	netconvert --osm-files Munich.osm -o Munich.net.xml  --junctions.join --roundabouts.guess --osm.elevation --tls.guess 
+
+4- Imports polygons from OSM-data and produces a Sumo-polygon file
+	polyconvert --net-file Munich.net.xml --osm-files Munich.osm --type-file typemap.xml -o Munich.poly.xml
+
+5- Generate the vehicular traffic demand 
+	python /home/mtalaat/sumo-svn/tools/randomTrips.py  --n Munich.net.xml -r cars.rou.xml -t "type=\"car\" departSpeed=\"max\" departLane=\"best\"" -c passenger --additional-files car.add.xml   -p 1.4 -e 1000 -l
+
+5- Generate the pedestrian traffic demand
+	python /home/mtalaat/sumo-svn/tools/randomTrips.py  --n Munich.net.xml -r peds.rou.xml -t "type=\"ped\"" -c pedestrian --pedestrians --additional-files ped.add.xml –-max-dist 800  -p 1.4 -e 1000 -l
+
+6- Run the sumo-gui and load the configuration file
+`	sumo-gui -c Hofgarten.sumo.cfg 
