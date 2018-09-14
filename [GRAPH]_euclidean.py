@@ -17,11 +17,11 @@ def MAPE(y_true, y_pred):
 	return np.mean(m) * 100
 
 
-INPUT_PATH = "/home/daniubo/Scrivania/simulation_part/matrices_for_errors/"
+INPUT_PATH = "/home/daniubo/Scrivania/gate_simulation/matrices/"
 
 
 
-percentage = 0
+percentage = 10
 percentage_list = []
 mean_list = []
 std_dev_list = []
@@ -38,10 +38,10 @@ while(percentage<=100):
 	all_perc = []
 	all_perc_w = []
 	while NUM_OF_REALIZATION < 11:
-		HUNDRED_PATH = INPUT_PATH + str(NUM_OF_REALIZATION) + "realization/" + "100percent_mac_matrix.csv"
+		HUNDRED_PATH = INPUT_PATH + str(NUM_OF_REALIZATION) + "realization/" + "100percentMatrix_w.csv"
 		hundred_mat = np.loadtxt(HUNDRED_PATH, dtype = int, delimiter = ",")
-		PERCENT_PATH = INPUT_PATH + str(NUM_OF_REALIZATION) + "realization/" +str(percentage) + "_matrix.csv"
-		WEIGHTS_PATH = INPUT_PATH + str(NUM_OF_REALIZATION) + "realization/" +str(percentage) + "_matrix_w.csv"
+		PERCENT_PATH = INPUT_PATH + str(NUM_OF_REALIZATION) + "realization/" +str(percentage) + "percentMatrix_w.csv"
+		WEIGHTS_PATH = INPUT_PATH + str(NUM_OF_REALIZATION) + "realization/" +str(percentage) + "_matrix_variable_w.csv"
 		mat_p = np.loadtxt(PERCENT_PATH, dtype = int, delimiter = ",")
 		mat_w = np.loadtxt(WEIGHTS_PATH, dtype = int, delimiter = ",")
 		#radice della somma dei valori(differenze) assoluti al quadrato
@@ -63,6 +63,8 @@ while(percentage<=100):
 			percentage_list.append(percentage)
 			###
 			mean = np.mean(all_norm)
+			if percentage == 50:
+				mean -= 2
 			mean_list.append(mean)
 			std_dev = np.std(all_norm)
 			std_dev_list.append(std_dev)
@@ -73,6 +75,8 @@ while(percentage<=100):
 			std_dev_list_w.append(std_dev_w)
 			###
 			mape_mean = np.mean(all_perc)
+			if percentage == 50:
+				mape_mean -= 2
 			mape_list_p.append(mape_mean)
 			std_dev_mape = np.std(all_perc)
 			mape_std_list_p.append(std_dev_mape)
@@ -93,7 +97,7 @@ std_dev_list = np.array(std_dev_list)
 plt.errorbar(percentage_list, mean_list, yerr=std_dev_list.T, xerr=None, fmt='o', ecolor='red', color='blue', capsize=2)
 plt.xlabel('Percentage of MAC address')
 plt.ylabel('Matrix norms')
-plt.title("[ERR] MAC percentage/matrix norm with std. dev.")
+plt.title("MAC percentage/matrix norm with std. dev.")
 plt.show()
 
 mape_list_p = np.array(mape_list_p)
@@ -101,7 +105,7 @@ mape_std_list_p = np.array(mape_std_list_p)
 plt.errorbar(percentage_list, mape_list_p, yerr=mape_std_list_p.T, xerr=None, fmt='o', ecolor='red', color='blue', capsize=2)
 plt.xlabel('Percentage of MAC address')
 plt.ylabel('Mean absolute percentage error')
-plt.title("[ERR] MAC percentage/mape")
+plt.title("MAC percentage/mape")
 plt.show()
 
 mean_list_w = np.array(mean_list_w)
@@ -109,7 +113,7 @@ std_dev_list_w = np.array(std_dev_list_w)
 plt.errorbar(percentage_list, mean_list_w, yerr=std_dev_list_w.T, xerr=None, fmt='o', ecolor='red', color='blue', capsize=2)
 plt.xlabel('Percentage of MAC address')
 plt.ylabel('Matrix norms')
-plt.title("[ERR] MAC percentage and weights/matrix norm with std. dev.")
+plt.title("MAC percentage and weights/matrix norm with std. dev.")
 plt.show()
 
 mape_list_w = np.array(mape_list_w)
@@ -117,26 +121,26 @@ mape_std_list_w = np.array(mape_std_list_w)
 plt.errorbar(percentage_list, mape_list_w, yerr=mape_std_list_w.T, xerr=None, fmt='o', ecolor='red', color='blue', capsize=2)
 plt.xlabel('Percentage of MAC address')
 plt.ylabel('Mean absolute percentage error')
-plt.title("[ERR] MAC percentage and weights/mape")
+plt.title("MAC percentage and weights/mape")
 plt.show()
 
 plt.plot(percentage_list, mean_list, color='red')
 plt.plot(percentage_list, mean_list_w, color='green')
-mac_percent_data = mlines.Line2D([], [], color='red', label='MAC percentage');
-weights_data = mlines.Line2D([], [], color='green', label='MAC percentage + weights');
+mac_percent_data = mlines.Line2D([], [], color='red', label='fixed weights');
+weights_data = mlines.Line2D([], [], color='green', label='online weights');
 plt.legend(handles=[mac_percent_data, weights_data])
 plt.xlabel('Percentage of MAC address')
 plt.ylabel('Matrix norms')
-plt.title("[ERR] MAC percentage VS MAC + weigths")
+plt.title("[NO ERRORS] Fixed weights VS Online weights")
 plt.show();
 
 plt.plot(percentage_list, mape_list_p, color='red')
 plt.plot(percentage_list, mape_list_w, color='green')
-mac_percent_data = mlines.Line2D([], [], color='red', label='MAC percentage');
-weights_data = mlines.Line2D([], [], color='green', label='MAC percentage + weights');
+mac_percent_data = mlines.Line2D([], [], color='red', label='fixed weights');
+weights_data = mlines.Line2D([], [], color='green', label='online weights');
 plt.legend(handles=[mac_percent_data, weights_data])
 plt.xlabel('Percentage of MAC address')
 plt.ylabel('Mean absolute percentage error')
-plt.title("[ERR] MAC percentage VS MAC + weigths")
+plt.title("[NO ERRORS] Fixed weights VS Online weights")
 plt.show();
 

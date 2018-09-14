@@ -3,8 +3,8 @@ import numpy as np
 NUM_REALIZ = 1
 PERCENTAGE = 100
 
-INPUT_PATH_MATRICES = "/home/daniubo/Scaricati/ampl.linux64/with_errors_and_weights/matrices/"
-OUTPUT_PATH = "/home/daniubo/Scrivania/simulation_part/matrices_for_errors/"
+INPUT_PATH_MATRICES = "/home/daniubo/Scaricati/ampl.linux64/no_errors_var_weights/matrices/"
+OUTPUT_PATH = "/home/daniubo/Scrivania/gate_simulation/matrices/"
 
 def oneTwo(n, flux_matrix):
 	flux_matrix[0][1] = n;
@@ -70,7 +70,7 @@ update_mat = {	1 : oneTwo,
 
 while NUM_REALIZ < 11:
 	PERCENTAGE = 100
-	while PERCENTAGE >= 0:
+	while PERCENTAGE > 0:
 		flux_matrix = np.array([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]])
 		with open(INPUT_PATH_MATRICES + "mat_" + str(NUM_REALIZ) + "_" + str(PERCENTAGE) + ".txt", "r") as f:
 			first_line = True
@@ -82,6 +82,6 @@ while NUM_REALIZ < 11:
 					update_mat[count_line](flux, flux_matrix)
 				else:
 					first_line = False
-		np.savetxt(OUTPUT_PATH+str(NUM_REALIZ)+"realization/"+str(PERCENTAGE)+"_matrix_w.csv", flux_matrix, delimiter=",", fmt="%0.0f")
+		np.savetxt(OUTPUT_PATH+str(NUM_REALIZ)+"realization/"+str(PERCENTAGE)+"_matrix_variable_w.csv", flux_matrix, delimiter=",", fmt="%0.0f")
 		PERCENTAGE -= 10
 	NUM_REALIZ += 1
